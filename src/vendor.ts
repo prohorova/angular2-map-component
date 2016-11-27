@@ -9,5 +9,10 @@ import '@angular/router';
 import 'rxjs';
 import '@angularclass/hmr';
 
+// bootstrap
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'leaflet/dist/leaflet.css';
+
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...

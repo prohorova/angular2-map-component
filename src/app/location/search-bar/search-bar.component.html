@@ -1,0 +1,10 @@
+<div class="search form-inline">
+  <div class="form-group">
+    <label for="query" class="sr-only">Address:</label>
+    <input type="text" id="query" class="form-control"
+           placeholder="Enter address" [(ngModel)]="query"
+           (keyup.enter)="search()">
+    <button type="button" class="btn btn-primary" (click)="search()"
+            [disabled]="!query">Search</button>
+  </div>
+</div>

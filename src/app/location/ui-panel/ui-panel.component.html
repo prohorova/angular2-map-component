@@ -1,0 +1,38 @@
+<div class="row margin-bottom">
+  <div class="col-md-4">Country:</div>
+  <div class="col-md-8" *ngIf="location">
+    <input type="text" class="form-control" [(ngModel)]="location.country" disabled>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+  <div class="col-md-4">Region:</div>
+  <div class="col-md-8" *ngIf="location">
+    <input type="text" class="form-control" [(ngModel)]="location.region" disabled>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+  <div class="col-md-4">City:</div>
+  <div class="col-md-8" *ngIf="location">
+    <input type="text" class="form-control" [(ngModel)]="location.city" disabled>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+  <div class="col-md-4">Neighborhood (optional):</div>
+  <div class="col-md-8" *ngIf="location">
+    <input type="text" class="form-control" [(ngModel)]="location.neighbourhood">
+  </div>
+</div>
+
+<div class="margin-bottom">
+  <button type="button" class="btn btn-success btn-block" [disabled]="!location || !location.isFilled()" (click)="use()">
+    Use location
+  </button>
+</div>
+
+<div class="margin-bottom">
+  <button type="button" class="btn btn-danger btn-block" (click)="cancel()">Cancel</button>
+</div>
+
