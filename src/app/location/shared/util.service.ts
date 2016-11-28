@@ -8,7 +8,7 @@ export class UtilService {
   mode: string;
   url: string;
   protocol: string;
-  initializeValues: ReplaySubject = new ReplaySubject();
+  initializeValues: ReplaySubject<any> = new ReplaySubject<any>();
 
   initValues(mode: string, url: string, protocol: string) {
     this.mode = mode || 'GET';
