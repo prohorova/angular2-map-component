@@ -47,9 +47,7 @@ export class LeafletService {
 
   setMarker(lat: number, lng: number) {
     if (!this.marker) {
-      let icon = new L.Icon.Default;
-      icon.options.shadowSize = [0, 0];
-      this.marker =  L.marker([lat, lng], {draggable: true, icon: icon}).addTo(this.map);
+      this.marker =  L.marker([lat, lng], {draggable: true}).addTo(this.map);
       this.map.panTo([lat, lng]);
       this.marker.on('dragend', (event) => {
         let coordinates = event.target.getLatLng();

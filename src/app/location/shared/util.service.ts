@@ -13,10 +13,6 @@ export class UtilService {
     this.protocol = protocol || this.getProtocol(this.url);
   }
 
-  getProtocol() {
-    return this.protocol;
-  }
-
   private getProtocol(url: string) {
     let protocol = url.split('//')[0];
     if (protocol !== 'http:' && protocol !== 'https:') {
