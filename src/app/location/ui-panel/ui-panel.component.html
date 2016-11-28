@@ -1,38 +1,40 @@
-<div class="row margin-bottom">
-  <div class="col-md-4">Country:</div>
-  <div class="col-md-8" *ngIf="location">
-    <input type="text" class="form-control" [(ngModel)]="location.country" disabled>
+<form [attr.action]="url" [attr.method]="method" ngNoForm>
+  <div class="row margin-bottom">
+    <div class="col-md-4">Country:</div>
+    <div class="col-md-8" *ngIf="location">
+      <input type="text" name="country" class="form-control" [value]="location.country" readonly>
+    </div>
   </div>
-</div>
 
-<div class="row margin-bottom">
-  <div class="col-md-4">Region:</div>
-  <div class="col-md-8" *ngIf="location">
-    <input type="text" class="form-control" [(ngModel)]="location.region" disabled>
+  <div class="row margin-bottom">
+    <div class="col-md-4">Region:</div>
+    <div class="col-md-8" *ngIf="location">
+      <input type="text" name="region" class="form-control" [value]="location.region" readonly>
+    </div>
   </div>
-</div>
 
-<div class="row margin-bottom">
-  <div class="col-md-4">City:</div>
-  <div class="col-md-8" *ngIf="location">
-    <input type="text" class="form-control" [(ngModel)]="location.city" disabled>
+  <div class="row margin-bottom">
+    <div class="col-md-4">City:</div>
+    <div class="col-md-8" *ngIf="location">
+      <input type="text" name="city" class="form-control" [value]="location.city" readonly>
+    </div>
   </div>
-</div>
 
-<div class="row margin-bottom">
-  <div class="col-md-4">Neighborhood (optional):</div>
-  <div class="col-md-8" *ngIf="location">
-    <input type="text" class="form-control" [(ngModel)]="location.neighbourhood">
+  <div class="row margin-bottom">
+    <div class="col-md-4">Neighborhood (optional):</div>
+    <div class="col-md-8" *ngIf="location">
+      <input type="text" name="neighbourhood" class="form-control" [value]="location.neighbourhood || '' ">
+    </div>
   </div>
-</div>
 
-<div class="margin-bottom">
-  <button type="button" class="btn btn-success btn-block" [disabled]="!location || !location.isFilled()" (click)="use()">
-    Use location
-  </button>
-</div>
+  <div class="margin-bottom">
+    <button type="submit" class="btn btn-success btn-block" [disabled]="!location || !location.isFilled()" >
+      Use location
+    </button>
+  </div>
 
-<div class="margin-bottom">
-  <button type="button" class="btn btn-danger btn-block" (click)="cancel()">Cancel</button>
-</div>
+  <div class="margin-bottom">
+    <button type="button" class="btn btn-danger btn-block" (click)="cancel()">Cancel</button>
+  </div>
+</form>
 

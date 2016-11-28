@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+
 @Injectable()
 export class UtilService {
 
   mode: string;
   url: string;
   protocol: string;
+  initializeValues: ReplaySubject = new ReplaySubject();
 
   initValues(mode: string, url: string, protocol: string) {
-    this.mode = mode || 'POST';
+    this.mode = mode || 'GET';
     this.url = url || 'https://brownhanky.com/index.php?r=test/use-location';
     this.protocol = protocol || this.getProtocol(this.url);
+    this.initializeValues.next({mode: this.mode, url: this.url, protocol: this.protocol});
   }
 
   private getProtocol(url: string) {
