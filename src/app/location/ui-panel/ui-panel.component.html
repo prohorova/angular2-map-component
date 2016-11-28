@@ -2,21 +2,21 @@
   <div class="row margin-bottom">
     <div class="col-md-4">Country:</div>
     <div class="col-md-8" *ngIf="location">
-      <input type="text" name="country" class="form-control" [value]="location.country" readonly>
+      <input type="text" name="country" class="form-control" [value]="location.country || '' " readonly>
     </div>
   </div>
 
   <div class="row margin-bottom">
     <div class="col-md-4">Region:</div>
     <div class="col-md-8" *ngIf="location">
-      <input type="text" name="region" class="form-control" [value]="location.region" readonly>
+      <input type="text" name="region" class="form-control" [value]="location.region || '' " readonly>
     </div>
   </div>
 
   <div class="row margin-bottom">
     <div class="col-md-4">City:</div>
     <div class="col-md-8" *ngIf="location">
-      <input type="text" name="city" class="form-control" [value]="location.city" readonly>
+      <input type="text" name="city" class="form-control" [value]="location.city || '' " readonly>
     </div>
   </div>
 
